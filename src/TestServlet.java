@@ -24,7 +24,7 @@ public class TestServlet extends HttpServlet {
             // Get DataSource
             Context initContext  = new InitialContext();
             Context envContext  = (Context)initContext.lookup("java:/comp/env");
-            dataSource = (DataSource)envContext.lookup("jdbc/businesslocator");
+            dataSource = (DataSource)envContext.lookup("businesslocator");
  
              
         } catch (NamingException e) {
@@ -40,7 +40,7 @@ public class TestServlet extends HttpServlet {
             // Get Connection and Statement
             connection = dataSource.getConnection();
             statement = connection.createStatement();
-            String query = "SELECT * FROM address";
+            String query = "SELECT company_address_id, ca_company_id, ca_address_id FROM company_address WHERE ca_address_id = '111' ";
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + resultSet.getString(2) + resultSet.getString(3));
