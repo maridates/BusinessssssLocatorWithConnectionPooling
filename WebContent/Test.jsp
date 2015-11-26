@@ -5,8 +5,8 @@
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<sql:query var="rs" dataSource="businesslocator">
-SELECT company_address_id, ca_company_id, ca_address_id FROM company_address WHERE ca_address_id = "111" 
+<sql:query var="rs" dataSource="jdbc/businesslocator">
+SELECT company_address_id, ca_company_id, ca_address_id FROM company_address WHERE ca_address_id = '111' 
 </sql:query>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
